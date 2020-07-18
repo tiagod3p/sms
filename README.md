@@ -75,7 +75,7 @@
 ### Pre-requisites
 
 Before you begin, you will need to have the following tools installed on your machine:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) and [PostgreSQL](https://www.postgresql.org/). 
 In addition, it is good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/)
 
 
