@@ -1,0 +1,63 @@
+<div class="item">
+    <div>
+        Professor
+    </div>
+    <div>
+        <input type="text" name="name" value="{{professor.name}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Date of Birth
+    </div>
+    <div>
+        <input type="date"  name="birth" value={{professor.birth}}>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Gender
+    </div>
+    <div>
+        <span>
+            <input 
+            type="radio"
+            name="gender" 
+            value="M" 
+            {% if professor.gender == "M" %} 
+            checked
+            {% endif %}>Male
+        </span>
+        <span>
+            <input 
+            type="radio"
+            name="gender" 
+            value="F" 
+            {% if professor.gender == "F" %} 
+            checked
+            {% endif %}>Female
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Expertise
+    </div>
+    <div>
+        <input type="text" name="services" value="{{professor.services}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Years as Professor
+    </div>
+    <div>
+        <input type="text" name="years" placeholder="Ex.: 5" value="{{professor.years}}">
+    </div>
+</div>
+
+<button type="submit">Save</button>

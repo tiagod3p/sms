@@ -1,0 +1,26 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+<div class="card">
+    <section class="avatar"></section>
+    <section class="details">
+        <h3>Edit student</h3>
+        <form method="post" action="/students?_method=PUT" >
+
+            {% include 'students/fields.njk' %}    
+
+            <input type="hidden" name="id" value={{student.id}}>   
+        </form>
+
+        <form action="/students?_method=DELETE" method="post">
+            <input type="hidden" name="id" value={{student.id}}>
+            <button id="button_delete" type="submit">DELETAR</button>
+        </form>
+    </section>
+
+</div>
+
+{% include 'script_edit.njk' %}
+
+{% endblock %}

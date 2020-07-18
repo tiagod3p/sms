@@ -1,0 +1,96 @@
+<div class="item">
+    <div>
+        Student
+    </div>
+    <div>
+        <input type="text" name="name" value="{{student.name}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        E-mail
+    </div>
+    <div>
+        <input type="email" name="email" placeholder="exemplo@exemplo.com" value="{{student.email}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Date of Birth
+    </div>
+    <div>
+        <input type="date"  name="birth" value={{student.birth}}>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Gender
+    </div>
+    <div>
+        <span>
+            <input 
+            type="radio"
+            name="gender" 
+            value="M" 
+            {% if student.gender == "M" %} 
+            checked
+            {% endif %}>Male
+        </span>
+        <span>
+            <input 
+            type="radio"
+            name="gender" 
+            value="F" 
+            {% if student.gender == "F" %} 
+            checked
+            {% endif %}>Female
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        Course:
+    </div>
+    <div>
+        <select name="course">
+            <option value="SIT"
+            {% if student.course == "SIT"%} selected {% endif %}>
+            Technology
+            </option>
+
+            <option value="SRT"
+            {% if student.course == "SRT"%} selected {% endif %}>
+            Computer Networks
+            </option>
+
+            <option value="SAT"
+            {% if student.course == "SAT"%} selected {% endif %}>
+            Business
+            </option>
+
+        </select>
+    </div>
+</div>
+<div class="item">
+    <div>
+        Professor:
+    </div>
+    <div>
+        <select name="professor_id">
+            {% for professor in professors %}
+                <option value="{{professor.id}}"
+                {% if student.professor_id == professor.id %} selected {% endif %}>
+                    {{professor.name}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+
+
+<button type="submit">Save</button>

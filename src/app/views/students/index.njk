@@ -1,0 +1,73 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class='card table-container'>
+
+        <div class="header-table">
+
+            <a href="/students/add">Add Student</a>
+
+            <form action="/students" method="GET">
+                <input 
+                type="text"
+                name="filter"
+                placeholder="Name or email"
+                value={{filter}} 
+                >
+                <button type="submit">Filter</button>
+            </form>
+            
+        </div>
+
+        <table width=100%>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Course</th>
+                    <th>E-mail</th>
+                    <th> </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{student.name}}</td>
+                        <td>
+                          {{"Technology" if student.course == "SIT"}}  
+                          {{"Computer Network" if student.course == "SRT"}}  
+                          {{"Business" if student.course == "SAT"}}  
+                        </td>
+                        <td>{{student.email}}</td>
+
+                        <td><a href="/students/{{student.id}}">See</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        <div class="footer">
+            <div 
+            class="pagination"
+            data-page="{{paginate.selectedPage}}"
+            data-total="{{paginate.totalPages}}"
+            data-filter = "{{filter}}"
+            >
+            </div>
+
+            <div 
+            class="limits"
+            data-limit="{{limit}}"
+            >
+                <a href="?p=1&limit=2">2</a>
+                <a href="?p=1&limit=3">3</a>
+                <a href="?p=1&limit=4">4</a>
+                per page
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

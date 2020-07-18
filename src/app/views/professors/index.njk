@@ -1,0 +1,75 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class='card table-container'>
+
+        <div class="header-table">
+        <a href="/professors/add">Add Professor</a>
+
+        <form action="/professors" method="GET">
+            <input
+            type="text"
+            name="filter"
+            placeholder="Name or subject"
+            value={{filter}}
+            >
+            <button type="submit">Filter</button>
+        </form>
+        </div>
+        
+
+        <table width=100%>
+            <thead>
+                <tr>
+                    <th>Professor</th>
+                    <th>Subject</th>
+                    <th>Students</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for professor in professors %}
+                    <tr>
+                        <td>{{professor.name}}</td>
+                        {% set list_of_services = professor.services.split(',') %}
+                        <td>
+                        {% for service in list_of_services %}
+                            <span>{{service}}</span>
+                        {% endfor %}
+                        </td>
+                        <td>{{professor.total_students}}</td>
+
+                        <td><a href="/professors/{{professor.id}}">SEE</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        <div class="footer">
+            <div 
+            class="pagination"
+            data-page="{{paginate.selectedPage}}"
+            data-total="{{paginate.totalPages}}"
+            data-filter = "{{filter}}"
+            >
+            </div>
+
+            <div 
+            class="limits"
+            data-limit="{{limit}}"
+            >
+                <a href="?p=1&limit=2">2</a>
+                <a href="?p=1&limit=3">3</a>
+                <a href="?p=1&limit=4">4</a>
+                per page
+            </div>
+
+        </div>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class='card'>
+        <section class="avatar"></section>
+        <section class="details">
+            <h3>Professor Details</h3>
+            <div class="item">
+                <div>
+                    Professor
+                </div>
+                <div>
+                    {{professor.name}}
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    Age
+                </div>
+                <div>
+                    {{professor.age}} years old
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    Gender
+                </div>
+                <div>
+                    {{"Male" if professor.gender == "M" else "Female"}}
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    Expertise
+                </div>
+                <div>
+                    {% set list_of_services = professor.services.split(',') %}
+                    {% for service in list_of_services %}
+                        <span>{{service}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    Years as Professor
+                </div>
+                <div>
+                    {{professor.years}} years
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    Hired at:
+                </div>
+                <div>
+                    {{professor.createdAt}}
+                </div>
+            </div>
+
+            <a href="{{professor.id}}/edit" class="button">Edit</a>
+    
+        </section>
+    </div>
+
+{% endblock %}

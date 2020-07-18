@@ -1,0 +1,12 @@
+<script>
+const buttonDelete = document.querySelector('#button_delete')
+
+buttonDelete.addEventListener('click', function(event) {
+    const confirmation = confirm("Are you sure you want to delete this item?")
+
+    if(!confirmation) {
+        event.preventDefault()
+    }
+})
+
+</script>

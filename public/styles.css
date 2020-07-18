@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #264653;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    background-color: var(--primary-color);
+}
+
+header {
+    padding: 40px;
+
+    background-color: #ffffff;
+
+    text-align: center;
+
+    border-bottom: 2px solid #555;
+}
+
+header div a {
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 42px;
+
+    color: #777;
+
+    position: relative;
+}
+
+header div a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+header div a + a {
+    margin-left: 40px;
+}
+
+header div a::after {
+    content: "";
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--primary-color);
+
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+
+header div a:hover::after {
+    width: 100%;
+    
+    transition: width 200ms ease-in-out;
+}
+
+/* === CARD === */
+
+.card {
+    background: white;
+
+    margin: 48px auto;
+
+    width: 800px;
+    min-height: 400px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    box-shadow: 8px 8px 8px -2px rgba(0, 0, 0, 0.7);
+}
+
+.avatar {
+    background: url('https://source.unsplash.com/collection/517198/600x400') no-repeat center center / cover;
+    
+}
+
+.details {
+    padding: 8px 16px;
+}
+
+.details h3 {
+    color: #555;
+   
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.9px;
+}
+
+.details .item div:first-child {
+    margin-top: 24px;
+    
+    color: #777;
+
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.9px;
+}
+
+.details .item div:nth-child(2) {
+    margin: 8px 0px;
+    
+    color: rgba(0, 0, 0, 0.9);
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.details .item:last-child div + div{
+    border: none;
+}
+
+.details .item span {
+    padding: 8px 16px;
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    display: inline-block;
+ 
+    background-color: #ffba08;
+    color: #555;
+
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border-radius: 8px;
+
+}
+
+/* === FORMS === */ 
+
+input, select {
+    padding: 8px;
+
+    width: 100%;
+
+    color: #555;
+
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 8px;
+}
+
+input::placeholder {
+    color: #555;
+
+    font-size: 14px;
+    font-weight: normal;
+}
+
+button[type="submit"],
+a.button {
+    padding: 8px 32px;
+    margin: 16px auto;
+
+    background-color: var(--primary-color);
+    color: #ffffff;
+
+    width: 100%;
+
+    border-radius: 16px;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+
+    text-decoration: none;
+}
+
+#button_delete {
+    margin-top: 8px;
+
+    background-color: #be3422;
+}
+
+
+/* === INDEX === */
+
+.table-container {
+    display: block;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+.table-container table thead tr {
+    text-align: left;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    font-size: 14px;
+    line-height: 24px;
+}
+
+th  {
+    text-transform: uppercase;
+
+    color: var(--primary-color);
+    letter-spacing: 0.9px;
+
+}
+
+.table-container table tbody tr:last-child td{
+    border-bottom: none;
+    
+}
+
+.table-container table tbody tr td {
+    font-weight: 500;
+
+}
+
+.table-container table tbody tr td span {
+    padding: 4px 8px;
+    margin-right: 4px;
+
+    display: inline-block;
+ 
+    background-color: #ffba08;
+    color: #555;
+
+    text-transform: uppercase;
+    font-weight: 400;
+
+    border-radius: 8px;
+}
+
+.table-container .header-table a,
+.table-container table a {
+    text-decoration: none;
+    text-transform: uppercase;
+
+    padding: 8px 16px;
+
+    color: white;
+    font-weight: bold;
+
+    border-radius: 4px;
+
+    background-color: var(--primary-color);
+}
+
+.table-container > a{
+    margin-bottom: 16px;
+
+    display: inline-block;
+}
+
+/* === FILTER === */
+
+.header-table {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.header-table a {
+    width: 140px;
+    padding: 8px 32px;
+
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.header-table form {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    grid-gap: 8px;
+    align-items: center;
+}
+
+.header-table form input {
+    padding: 4px 8px;
+
+    border: 1px solid rgb(143, 143, 143);
+}
+
+.header-table form input::placeholder {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #555;
+}
+
+/* === PAGINATION === */
+
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 32px / 1fr;
+}
+
+.pagination {
+    justify-self: left;
+}
+
+.pagination a,
+.pagination span {
+    text-decoration: none;
+
+    font-size: 16px;
+    color: #555;
+
+    margin-right: 16px;
+}
+
+.pagination a {
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.7);
+
+    border: 1px solid #777;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    color: white;
+
+    background-color: var(--primary-color);
+}
+
+/* === LIMIT === */
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 24px;
+}
+
+.limits {
+    justify-self: right;
+}
+
+.limits a {
+    text-decoration: none;
+
+    font-size: 16px;
+    color: #555;
+
+    margin-right: 16px;
+}
+.limits a {
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.limits a:hover {
+    filter: brightness(0.7);
+
+    border: 1px solid #777;
+}
+
+.limits a.active {
+    font-weight: bold;
+    color: white;
+
+    background-color: var(--primary-color);
+}
