@@ -28,7 +28,7 @@
 
 <p align="center">
  <a href="#-about-the-project">About</a> •
- <a href="#EF%B8%8F+features">Features</a> •
+ <a href="#%EF%B8%8F-features">Features</a> •
  <a href="#-layout">Layout</a> • 
  <a href="#-how-it-works">How it works</a> • 
  <a href="#-tech-stack">Tech Stack</a> • 
